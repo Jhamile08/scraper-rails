@@ -11,8 +11,8 @@ Este documento te guía paso a paso para clonar un proyecto Ruby on Rails y ejec
 ## 📥 1. Clonar el Repositorio
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
-cd <NOMBRE_DEL_PROYECTO>
+git clone https://github.com/Jhamile08/scraper-rails.git
+cd scraper-rails
 ```
 💎 2. Instalar Ruby 3.3.5
 Usando rbenv (recomendado)
