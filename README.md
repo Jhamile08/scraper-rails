@@ -1,24 +1,71 @@
-# README
+# 🛠️ Guía para Clonar y Ejecutar un Proyecto Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este documento te guía paso a paso para clonar un proyecto Ruby on Rails y ejecutarlo en tu máquina, utilizando:
 
-Things you may want to cover:
+- **Ruby 3.3.5**
+- **Rails 7.2.2.1**
+- **Bundler (última compatible)**
 
-* Ruby version
+---
 
-* System dependencies
+## 📥 1. Clonar el Repositorio
 
-* Configuration
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd <NOMBRE_DEL_PROYECTO>
+```
+💎 2. Instalar Ruby 3.3.5
+Usando rbenv (recomendado)
+Instalar dependencias:
+```bash
+sudo apt update
+sudo apt install -y git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev
+```
+Instalar rbenv y ruby-build:
+```bash
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+cd ~/.rbenv && src/configure && make -C src
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init - bash)"' >> ~/.bashrc
+source ~/.bashrc
+```
+```bash
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+```
+Instalar Ruby 3.3.5:
+```bash
+rbenv install 3.3.5
+rbenv global 3.3.5
+ruby -v  # Debería mostrar ruby 3.3.5
+```
+🚂 3. Instalar Rails 7.2.2.1
+```bash
+gem install rails -v 7.2.2.1
+rails -v  # Debería mostrar Rails 7.2.2.1
+```
+📦 4. Instalar Bundler
+```bash
+gem install bundler
+bundle -v  # Confirma la versión instalada
+```
+📁 5. Instalar las Dependencias del Proyecto
+Desde la raíz del proyecto:
+```bash
+bundle install
+```
+⚠️ Si ves errores relacionados con gems específicas, asegúrate de tener las herramientas de compilación instaladas (build-essential, libssl-dev, etc).
 
-* Database creation
 
-* Database initialization
+✅ Confirmaciones Rápidas
+```bash
+ruby -v      # ruby 3.3.5
+rails -v     # Rails 7.2.2.1
+bundle -v    # Bundler instalado
+```
+📝 Notas Finales
+Si el proyecto tiene un archivo .ruby-version, puedes hacer que rbenv lo use automáticamente.
 
-* How to run the test suite
+Si hay errores con gemas nativas (como pg, nokogiri, etc.), instala sus dependencias del sistema.
 
-* Services (job queues, cache servers, search engines, etc.)
+Usa siempre bundle exec para ejecutar comandos definidos en el Gemfile.lock.
 
-* Deployment instructions
-
-* ...
